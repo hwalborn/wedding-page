@@ -1,0 +1,11 @@
+{
+  "name": "wedding-page",
+  "version": "1.0.0",
+  "description": "Sara and Holt's Wedding Page",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "author": "holt w.",
+  "license": "ISC"
+}
