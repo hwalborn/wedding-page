@@ -12,6 +12,18 @@
   width: 100%;
 }
 
+#drop {
+  background-color: rgba(0,0,0,0);
+}
+
+#drop {
+  border-color: rgba(0,0,0,0);
+}
+
+#drop:focus{
+  border-color: rgba(0,0,0,0) !important;
+}
+
 .header a{
   font-family: 'Great Vibes', serif;
   color: white;
