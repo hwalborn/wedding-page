@@ -1,9 +1,9 @@
 import React from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { Row } from 'react-bootstrap'
+import { Row, Col, DropdownButton, Dropdown, ButtonToolbar } from 'react-bootstrap'
 
-import api from '../data/apiKey'
+import dataAccess from '../data/dataAccess'
 import AboutSection from './AboutSection'
 
 class Main extends React.Component {
@@ -19,23 +19,14 @@ class Main extends React.Component {
     if(this.state.sheetLoaded){
       return;
     }
-    fetch(`https://sheets.googleapis.com/v4/spreadsheets/14OsbtSgGtA911j16Y_QjX6P_etYEJ4sahge0iQn8mcw/values:batchGet?key=${api.apiKey}&ranges=Sheet1&majorDimension=ROWS`)
-    .then((resp) => {
-      resp.json()
-      .then((data) => {
-        var valueObjects = {}
-        data.valueRanges[0].values.forEach((value) => {
-          valueObjects[value[0]] = [value[1], value[2]]
-        })
-        this.setState(() => {
-          return {
-            sheetLoaded: true,
-            aboutValues: valueObjects
-          }
-        })
+    var sheetData = dataAccess.googleSheets('sheet1').then((data) =>{
+      this.setState({
+        sheetLoaded: true,
+        aboutValues: data
       })
     })
   }
+
   render(){
   let importAll = (r) => {
     return r.keys().map(r);
@@ -56,9 +47,15 @@ class Main extends React.Component {
 
     return (
       <div>
-        <Carousel infiniteLoop={true} autoPlay={true} >
-            {carouselImages}
-        </Carousel>
+      <Row>
+        <Col md={4}>
+        </Col>
+        <Col md={8}>
+          <Carousel infiniteLoop={true} autoPlay={true} >
+              {carouselImages}
+          </Carousel>
+        </Col>
+      </Row>
         <Row>
           {aboutSections}
         </Row>

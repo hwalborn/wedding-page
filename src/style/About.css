@@ -1,10 +1,27 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
-#about-title-container{
+.about-title-container{
   padding: 0.75em;
   background: #DCB982;
   font-family: 'Open Sans', sans-serif;
+  border-radius: 10px 10px 0 0;
+  text-align: center;
 }
 
-#about-container {
+.about-container {
   margin-top: 5em;
+}
+
+.inner-about-container{
+  border: 1px solid black;
+  border-radius: 10px 10px 0 0;
+}
+
+.about-description-container {
+  background-color: rgb(152,182,161);
+  text-align: center;
+  height: 5em;
+}
+
+.about-description {
+  margin: 0;
 }
