@@ -49,7 +49,8 @@ class Main extends React.Component {
   let images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
   // add all the images to the carousel
   let carouselImages = images.map((image, index) => {
-    let filename = image.split('/')[image.split('/').length - 1];
+    // clean the file name...
+    let filename = image.split('/')[image.split('/').length - 1].split('.')[0];
     return <div><img src={image} key={index}/><p className="legend">{filename}</p></div>
   })
 
