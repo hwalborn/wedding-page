@@ -1,3 +1,6 @@
-#about-bethlehem{
-  background-color: orange;
+#map-container {
+  height: 75vh;
+  width: 75%;
+  box-shadow: 5px 5px 50px;
+  margin: 5em auto;
 }

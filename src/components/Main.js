@@ -2,6 +2,7 @@ import React from 'react'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import { Row, Col, DropdownButton, Dropdown, ButtonToolbar } from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import dataAccess from '../data/dataAccess'
 import AboutSection from './AboutSection'
@@ -49,6 +50,23 @@ class Main extends React.Component {
       <div>
       <Row>
         <Col md={4}>
+          <ul>
+            <li className="link-item">
+              <Link data-aos="fade-right" to="/aboutTheCouple" id="drop-link">
+                  About the Couple
+              </Link>
+            </li>
+            <li className="link-item">
+              <Link data-aos="fade-right" to="/bethlehem" id="drop-link">
+                  About Bethlehem
+              </Link>
+            </li>
+            <li className="link-item">
+              <Link data-aos="fade-right" to="/registry" id="drop-link">
+                  Registry
+              </Link>
+            </li>
+          </ul>
         </Col>
         <Col md={8}>
           <Carousel infiniteLoop={true} autoPlay={true} >
@@ -56,9 +74,9 @@ class Main extends React.Component {
           </Carousel>
         </Col>
       </Row>
-        <Row>
+        {/*<Row>
           {aboutSections}
-        </Row>
+        </Row>*/}
       </div>
     )
   }

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes|Parisienne|Tangerine');
 
+body {
+  background-color: #EEEEE0;
+}
+
 .col-md-3 {
   padding: 0;
 }
@@ -16,26 +20,6 @@
   color: #ff4f00;
 }
 
-#drop {
-  background-color: rgba(0,0,0,0);
-}
-
-#drop {
-  border-color: rgba(0,0,0,0);
-}
-.btn-primary:focus {
-    box-shadow: none !important;
-}
-
-.btn:focus {
-    outline: 0;
-    box-shadow: none !important;
-}
-
-#drop:focus{
-  border-color: rgba(0,0,0,0) !important;
-}
-
 .header a{
   font-family: 'Great Vibes', serif;
   color: black;
@@ -47,35 +31,7 @@
   text-align: center;
 }
 
-
-.header a:hover{
-  color: white;
-}
-
-.header a:visited{
-  color: black;
-  text-decoration: none;
-}
-
-.dropdown {
-  padding: 0;
-}
-
-div.dropdown.btn-group {
-  margin-left: 29%;
-}
-
-.dropItem {
-  padding-left: 0;
-}
-
-#drop {
-  font-size: 1.75em;
-  color: white;
-  padding: 0;
-  margin-left: 30%;
-}
-
+/*///// Carousel fixes /////*/
 #scroll-strip {
   height: 0.5em;
   background-color: #ff4f00;
@@ -83,6 +39,20 @@ div.dropdown.btn-group {
   margin: 0px;
 }
 
-#drop-link{
-  margin-left: 5%;
+/*////// Left Nav styles /////*/
+.link-item {
+  font-family: 'Great Vibes', serif;
+  font-size: 3em;
+  list-style-type: none;
+  text-decoration: none;
+  color: black;
+  padding-top: 1em;
+}
+.link-item a {
+  color: black;
+}
+
+.link-item a:visited{
+  color: black;
+  text-decoration: none;
 }

@@ -11,6 +11,8 @@ ReactDOM.render(
     <div>
       <Route exact path='/' component={ App } />
       <Route exact path="/bethlehem" component={ App } />
+      <Route exact path="/aboutTheCouple" component={ App } />
+      <Route exact path="/registry" component={ App } />
     </div>
   </HashRouter>,
 
