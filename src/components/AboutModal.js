@@ -4,7 +4,10 @@ import { Modal, Button } from 'react-bootstrap'
 const AboutModal = ({modalInfo, showModal, handleClose}) => {
     return (
       <div>
-        <Modal show={showModal} onHide={handleClose}>
+        <Modal show={showModal}
+               onHide={handleClose}
+               aria-labelledby="contained-modal-title-vcenter"
+               centered>
           <Modal.Header closeButton>
             <Modal.Title>{modalInfo.title}</Modal.Title>
           </Modal.Header>

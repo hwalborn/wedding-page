@@ -6,7 +6,7 @@ const Header = () => {
     return (
       <div>
         <Row className="header">
-          <Col md={{span:6, offset:3}}>
+          <Col md={12}>
             <Link id="header-title" to="/">Holt & Sara</Link>
           </Col>
         </Row>
