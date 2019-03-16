@@ -19,7 +19,7 @@
 .about-description-container {
   background-color: rgb(152,182,161);
   text-align: center;
-  height: 5em;
+  min-height: 5em;
 }
 
 .about-description {

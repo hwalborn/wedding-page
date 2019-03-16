@@ -1,6 +1,6 @@
 import React from 'react'
 
-const MapMarker = ({text}) => {
+const MapMarker = ({text, handleClick}) => {
     return (
       <div style={{
                   color: 'white',
@@ -11,7 +11,8 @@ const MapMarker = ({text}) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderRadius: '10%'
-                }}>
+                }}
+            onClick={handleClick}>
       {text}
       </div>
     )

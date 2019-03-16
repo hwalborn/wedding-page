@@ -46,12 +46,12 @@ class AboutTheCouple extends React.Component {
                                       fade={"fade-right"}
                                       width={6}
                                       anchorPlacement={"bottom-bottom"} />
-                <Col data-aos="fade-left" md={6} data-aos-anchor-placement="bottom-bottom">
+                <Col className="about-container" data-aos="fade-left" md={6} data-aos-anchor-placement="bottom-bottom">
                   <img className="about-image"  src={saraImage} />
                 </Col>
               </Row>
               <Row id="bottom-row" className="about-container">
-                <Col data-aos="fade-right" md={6} data-aos-anchor-placement="bottom-bottom">
+                <Col className="about-container" data-aos="fade-right" md={6} data-aos-anchor-placement="bottom-bottom">
                   <img className="about-image"  src={holtImage} />
                 </Col>
                 <AboutCoupleSection title={this.state.aboutValues["AboutHolt"][1]}
