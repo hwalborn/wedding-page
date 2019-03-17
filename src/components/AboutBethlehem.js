@@ -37,14 +37,17 @@ class AboutBethlehem extends React.Component {
       var values = {}
       data.valueRanges[0].values.forEach((value) => {
         // lat is the first column, lng is the second column, the name of
-        // the marker is the third column, and description is the fourth
-        values[value[2]] = [value[0], value[1], value[3]]
+        // the marker is the third column, description is the fourth,
+        // and the fifth column is whether or not it's a main marker
+        values[value[2]] = [parseFloat(value[0]), parseFloat(value[1]), value[3], value[4] === "TRUE"]
       })
       return values
     }
 
     handleClick = (e) => {
-      var text = e.target.innerText
+      // we set the data-name attribute on the marker because some markers
+      // have text and others don't, this way we can grab desc, etc.
+      var text = e.target.attributes["data-name"].value
       var info = this.state.aboutValues[text]
       this.setState({
         showModal: true,
@@ -75,11 +78,13 @@ class AboutBethlehem extends React.Component {
       // create the markers based on what's in the sheet
       let markers = this.state.sheetLoaded ?
         Object.keys(this.state.aboutValues).map((key, index) => {
+            let value = this.state.aboutValues[key]
             return <MapMarker key={index}
-                              lat={this.state.aboutValues[key][0]}
-                              lng={this.state.aboutValues[key][1]}
+                              lat={value[0]}
+                              lng={value[1]}
                               text={key}
-                              handleClick={this.handleClick} />
+                              handleClick={this.handleClick}
+                              isMain={value[3]} />
         })
         : null
 
@@ -89,7 +94,6 @@ class AboutBethlehem extends React.Component {
             <GoogleMapReact
               defaultCenter={this.mapsDefaultInfo.center}
               defaultZoom={this.mapsDefaultInfo.zoom}
-
               bootstrapURLKeys={{
                 key: api.mapsApiKey,
               }}>

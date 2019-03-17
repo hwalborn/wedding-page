@@ -14,7 +14,7 @@ export default {
           var valueObjects = {}
           // for the most part, we'll be building the same state every time.
           // however for google maps, we should pass in a unique stateCallback
-          // because each google sheet row has text, long, and lat
+          // because each google sheet row has text, long, lat, and description
           if(stateCallback === undefined || stateCallback === null){
             data.valueRanges[0].values.forEach((value) => {
               valueObjects[value[0]] = [value[1], value[2]]

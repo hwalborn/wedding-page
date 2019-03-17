@@ -10,7 +10,7 @@ const AboutCoupleSection = ({title, desc, fade, width, anchorPlacement}) => {
             <h5 className="about-title">{title}</h5>
           </div>
           <div className="about-description-container">
-            <p className="about-description" dangerouslySetInnerHTML={{ __html: desc }}></p>
+            <p className="about-description">{desc}</p>
           </div>
         </div>
       </Col>

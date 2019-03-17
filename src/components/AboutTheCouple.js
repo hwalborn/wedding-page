@@ -12,7 +12,8 @@ class AboutTheCouple extends React.Component {
       super(props)
       this.state = {
         sheetLoaded: false,
-        aboutValues: {}
+        aboutValues: {},
+        aboutContainerWidth: 6
       }
     }
 
@@ -26,6 +27,12 @@ class AboutTheCouple extends React.Component {
           aboutValues: data
         })
       })
+
+      if(window.innerWidth < 1000 && this.state.aboutContainerWidth < 12){
+        this.setState({
+          aboutContainerWidth: 12
+        })
+      }
     }
 
     render(){
@@ -44,20 +51,20 @@ class AboutTheCouple extends React.Component {
                 <AboutCoupleSection title={this.state.aboutValues["AboutSara"][1]}
                                       desc={this.state.aboutValues["AboutSara"][0]}
                                       fade={"fade-right"}
-                                      width={6}
+                                      width={this.state.aboutContainerWidth}
                                       anchorPlacement={"bottom-bottom"} />
-                <Col className="about-container" data-aos="fade-left" md={6} data-aos-anchor-placement="bottom-bottom">
+                <Col className="about-container" data-aos="fade-left" md={this.state.aboutContainerWidth} data-aos-anchor-placement="bottom-bottom">
                   <img className="about-image"  src={saraImage} />
                 </Col>
               </Row>
               <Row id="bottom-row" className="about-container">
-                <Col className="about-container" data-aos="fade-right" md={6} data-aos-anchor-placement="bottom-bottom">
+                <Col className="about-container" data-aos="fade-right" md={this.state.aboutContainerWidth} data-aos-anchor-placement="bottom-bottom">
                   <img className="about-image"  src={holtImage} />
                 </Col>
                 <AboutCoupleSection title={this.state.aboutValues["AboutHolt"][1]}
                                     desc={this.state.aboutValues["AboutHolt"][0]}
                                     fade={"fade-left"}
-                                    width={6}
+                                    width={this.state.aboutContainerWidth}
                                     anchorPlacement={"bottom-bottom"}/>
               </Row>
             </Container>

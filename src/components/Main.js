@@ -12,7 +12,8 @@ class Main extends React.Component {
     super(props)
     this.state = {
       sheetLoaded: false,
-      aboutValues: {}
+      aboutValues: {},
+      linkContainerWidth: 4
     }
   }
 
@@ -26,6 +27,12 @@ class Main extends React.Component {
         aboutValues: data
       })
     })
+
+    if(window.innerWidth < 1000 && this.state.linkContainerWidth < 12){
+      this.setState({
+        linkContainerWidth: 12
+      })
+    }
   }
 
   render(){
@@ -49,34 +56,31 @@ class Main extends React.Component {
     return (
       <div>
       <Row>
-        <Col md={4}>
+        <Col md={this.state.linkContainerWidth} sm={12}>
           <ul>
             <li className="link-item">
-              <Link data-aos="fade-right" to="/aboutTheCouple" id="drop-link">
+              <Link data-aos="fade-right" to="/aboutTheCouple" className="drop-link">
                   About the Couple
               </Link>
             </li>
             <li className="link-item">
-              <Link data-aos="fade-right" to="/bethlehem" id="drop-link">
+              <Link data-aos="fade-right" to="/bethlehem" className="drop-link">
                   About Bethlehem
               </Link>
             </li>
             <li className="link-item">
-              <Link data-aos="fade-right" to="/registry" id="drop-link">
+              <Link data-aos="fade-right" to="/registry" className="drop-link">
                   Registry
               </Link>
             </li>
           </ul>
         </Col>
-        <Col md={8}>
+        <Col md={8} sm={12}>
           <Carousel infiniteLoop={true} autoPlay={true} >
               {carouselImages}
           </Carousel>
         </Col>
       </Row>
-        {/*<Row>
-          {aboutSections}
-        </Row>*/}
       </div>
     )
   }
