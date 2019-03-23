@@ -15,7 +15,12 @@ class AboutBethlehem extends React.Component {
         sheetLoaded: false,
         aboutValues: {},
         showModal: false,
-        modalInfo: {}
+        modalInfo: {},
+        zoom: 13,
+        center: {
+          lat: 40.6259,
+          lng: -75.3705
+        }
       }
       this.handleClick = this.handleClick.bind(this)
       this.handleClose = this.handleClose.bind(this)
@@ -31,6 +36,15 @@ class AboutBethlehem extends React.Component {
           aboutValues: data
         })
       })
+      if(window.innerWidth < 1000 && this.state.zoom >= 13){
+        this.setState({
+          zoom: 17,
+          center: {
+            lat: 40.62,
+            lng: -75.3825
+          }
+        })
+      }
     }
 
     stateDataCallback = (data) => {
@@ -65,13 +79,7 @@ class AboutBethlehem extends React.Component {
       })
     }
 
-    mapsDefaultInfo = {
-      center: {
-        lat: 40.6259,
-        lng: -75.3705
-      },
-      zoom: 13
-    };
+
 
     render(){
 
@@ -87,13 +95,16 @@ class AboutBethlehem extends React.Component {
                               isMain={value[3]} />
         })
         : null
-
+        let mapsDefaultInfo = {
+          center: this.state.center,
+          zoom: this.state.zoom
+        };
       return (
         <div id="about-bethlehem">
           <div id="map-container">
             <GoogleMapReact
-              defaultCenter={this.mapsDefaultInfo.center}
-              defaultZoom={this.mapsDefaultInfo.zoom}
+              defaultCenter={mapsDefaultInfo.center}
+              defaultZoom={mapsDefaultInfo.zoom}
               bootstrapURLKeys={{
                 key: api.mapsApiKey,
               }}>

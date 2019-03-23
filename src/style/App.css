@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Great+Vibes|Parisienne|Tangerine|Dosis|Srisakdi');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Amatic+SC');
 
 body {
   background-color: #EEEEE0;
@@ -8,12 +8,20 @@ body {
   padding: 0;
 }
 
+#content {
+  margin-top: 7em;
+}
+
 /*/////Header stuff/////*/
 .header {
+  position:fixed;
+  top:0;
+  z-index: 100;
   margin: 0;
   background-color: rgb(152,182,161);
   padding: 1%;
   width: 100%;
+  height:7em;
 }
 
 #header-title{
@@ -21,7 +29,7 @@ body {
 }
 
 .header a{
-  font-family: 'Srisakdi', serif;
+  font-family: 'Dancing Script', serif;
   color: black;
   text-decoration: none;
   font-size: 3em;
@@ -41,7 +49,7 @@ body {
 
 /*////// Left Nav styles /////*/
 .link-item {
-  font-family: 'Srisakdi', serif;
+  font-family: 'Amatic SC', serif;
   font-size: 3em;
   list-style-type: none;
   text-decoration: none;
@@ -65,8 +73,15 @@ body {
     font-size: 9em !important;
   }
 
+  .header {
+    height: 13em;
+  }
+
+  #content {
+    margin-top: 13em;
+  }
   .inner-about-container {
-    font-size: 5em;
+    font-size: 9em;
   }
 
   .about-title {

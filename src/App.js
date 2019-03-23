@@ -18,7 +18,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div>
+        <div id="content">
           <Route exact path="/" component={ Main } />
           <Route exact path="/bethlehem" component={ AboutBethlehem } />
           <Route exact path="/aboutTheCouple" component={ AboutTheCouple } />
