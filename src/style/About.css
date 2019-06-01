@@ -2,9 +2,13 @@
 .about-title-container{
   padding: 0.75em;
   background: #DCB982;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Amatic SC', serif;
   border-radius: 10px 10px 0 0;
   text-align: center;
+}
+
+.about-title {
+  font-size: 2em !important;
 }
 
 .about-container {
@@ -20,6 +24,7 @@
   background-color: rgb(152,182,161);
   text-align: center;
   min-height: 5em;
+  font-family: 'Open Sans Condensed';
 }
 
 .about-description {
