@@ -58,23 +58,23 @@ class Main extends React.Component {
       <Row>
         <Col md={this.state.linkContainerWidth} sm={12}>
           <ul>
-            <li className="link-item">
-              <Link data-aos="fade-right" data-aos-once="true" to="/aboutTheCouple" className="drop-link">
+            <li className="link-item fade-in">
+              <Link to="/aboutTheCouple" className="drop-link">
                   About the Couple
               </Link>
             </li>
-            <li className="link-item">
-              <Link data-aos="fade-right" data-aos-once="true" to="/bethlehem" className="drop-link">
-                  About Bethlehem
-              </Link>
-            </li>
-            <li className="link-item">
-              <Link data-aos="fade-right" data-aos-once="true" to="/bigDay" className="drop-link">
+            <li className="link-item fade-in">
+              <Link to="/bigDay" className="drop-link">
                   The Big Day
               </Link>
             </li>
-            <li className="link-item">
-              <Link data-aos="fade-right" data-aos-once="true" to="/registry" className="drop-link">
+            <li className="link-item fade-in">
+              <Link to="/bethlehem" className="drop-link">
+                  About Bethlehem
+              </Link>
+            </li>
+            <li className="link-item fade-in">
+              <Link to="/registry" className="drop-link">
                   Registry
               </Link>
             </li>
