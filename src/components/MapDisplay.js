@@ -1,7 +1,6 @@
 import React from 'react'
 import GoogleMapReact from 'google-map-react';
 
-import dataAccess from '../data/dataAccess'
 import MapMarker from './MapMarker'
 import AboutModal from './AboutModal'
 import api from '../data/apiKey'
@@ -11,12 +10,12 @@ class MapDisplay extends React.Component {
     constructor(props){
       super(props)
       this.state = {
-        sheetLoaded: false,
-        aboutValues: {},
+        aboutValues: props.aboutValues,
         showModal: false,
         onlyMains: props.onlyMains,
         modalInfo: {},
         zoom: 13,
+        positionClass: props.positionClass,
         center: {
           lat: 40.6259,
           lng: -75.3705
@@ -24,38 +23,6 @@ class MapDisplay extends React.Component {
       }
       this.handleClick = this.handleClick.bind(this)
       this.handleClose = this.handleClose.bind(this)
-    }
-
-    componentDidMount() {
-      if(this.state.sheetLoaded){
-        return;
-      }
-      var sheetData = dataAccess.googleSheets('sheet5', this.stateDataCallback).then((data) =>{
-        this.setState({
-          sheetLoaded: true,
-          aboutValues: data
-        })
-      })
-      if(window.innerWidth < 1000 && this.state.zoom >= 13){
-        this.setState({
-          zoom: 17,
-          center: {
-            lat: 40.62,
-            lng: -75.3825
-          }
-        })
-      }
-    }
-
-    stateDataCallback = (data) => {
-      var values = {}
-      data.valueRanges[0].values.forEach((value) => {
-        // lat is the first column, lng is the second column, the name of
-        // the marker is the third column, description is the fourth,
-        // and the fifth column is whether or not it's a main marker
-        values[value[2]] = [parseFloat(value[0]), parseFloat(value[1]), value[3], value[4] === "TRUE"]
-      })
-      return values
     }
 
     handleClick = (e) => {
@@ -79,13 +46,10 @@ class MapDisplay extends React.Component {
       })
     }
 
-
-
     render(){
 
       // create the markers based on what's in the sheet
-      let markers = this.state.sheetLoaded ?
-        Object.keys(this.state.aboutValues).map((key, index) => {
+      let markers = Object.keys(this.state.aboutValues).map((key, index) => {
             let value = this.state.aboutValues[key]
             let isMain = value[3];
             if(this.state.onlyMains && !isMain){
@@ -98,13 +62,12 @@ class MapDisplay extends React.Component {
                               handleClick={this.handleClick}
                               isMain={value[3]} />
         })
-        : null
         let mapsDefaultInfo = {
           center: this.state.center,
           zoom: this.state.zoom
         };
       return (
-          <div id="map-container">
+          <div className={this.state.positionClass} id="map-container">
             <GoogleMapReact
               defaultCenter={mapsDefaultInfo.center}
               defaultZoom={mapsDefaultInfo.zoom}

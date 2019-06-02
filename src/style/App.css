@@ -103,6 +103,13 @@ body {
   }
 }
 
+.pull-right{
+  right: 0;
+}
+
+.pull-left{
+  left: 0;
+}
 
 @keyframes fadeInOpacity {
 	0% {
