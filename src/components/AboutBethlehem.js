@@ -10,8 +10,26 @@ class AboutBethlehem extends React.Component {
     super(props)
     this.state = {
       sheetLoaded: false,
-      aboutValues: props.aboutValues
+      aboutValues: props.aboutValues,
+      zoom: 13,
+      center: {
+        lat: 40.6259,
+        lng: -75.3705
+      }
     }
+    this.handleLocationClick = this.handleLocationClick.bind(this);
+  }
+
+  handleLocationClick = (e) => {
+    e.preventDefault();
+    var selectedLocation = this.state.aboutValues[e.target.innerText];
+    this.setState({
+      center: {
+        lat: selectedLocation[0],
+        lng: selectedLocation[1]
+      },
+      zoom: 15
+    })
   }
 
   componentDidMount() {
@@ -51,10 +69,15 @@ class AboutBethlehem extends React.Component {
       } else {
         return (
           <div id="about-bethlehem">
-            <LocationContainer positionClass={"pull-left"} />
+            <LocationContainer positionClass={"pull-left"}
+                               aboutValues={this.state.aboutValues}
+                               onlyMains={false}
+                               handleLocationClick={this.handleLocationClick} />
             <MapDisplay onlyMains={false} 
                         aboutValues={this.state.aboutValues} 
-                        positionClass={"pull-right"}/>
+                        positionClass={"pull-right"}
+                        zoom={this.state.zoom}
+                        center={this.state.center} />
           </div>
         )
       }

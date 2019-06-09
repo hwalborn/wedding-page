@@ -1,0 +1,6 @@
+#location-container {
+    position: absolute;
+    height: 80vh;
+    overflow-y: scroll;
+    width: 40%;
+}

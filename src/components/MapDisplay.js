@@ -14,12 +14,9 @@ class MapDisplay extends React.Component {
         showModal: false,
         onlyMains: props.onlyMains,
         modalInfo: {},
-        zoom: 13,
+        zoom: props.zoom,
         positionClass: props.positionClass,
-        center: {
-          lat: 40.6259,
-          lng: -75.3705
-        }
+        center: props.center
       }
       this.handleClick = this.handleClick.bind(this)
       this.handleClose = this.handleClose.bind(this)
@@ -62,15 +59,12 @@ class MapDisplay extends React.Component {
                               handleClick={this.handleClick}
                               isMain={value[3]} />
         })
-        let mapsDefaultInfo = {
-          center: this.state.center,
-          zoom: this.state.zoom
-        };
       return (
           <div className={this.state.positionClass} id="map-container">
             <GoogleMapReact
-              defaultCenter={mapsDefaultInfo.center}
-              defaultZoom={mapsDefaultInfo.zoom}
+              center={this.props.center}
+              zoom={this.props.zoom}
+              options={{scrollwheel:false}}
               bootstrapURLKeys={{
                 key: api.mapsApiKey,
               }}>

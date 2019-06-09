@@ -10,8 +10,26 @@ class BigDay extends React.Component {
     super(props)
     this.state = {
       sheetLoaded: false,
-      aboutValues: props.aboutValues
+      aboutValues: props.aboutValues,
+      zoom: 13,
+      center: {
+        lat: 40.6259,
+        lng: -75.3705
+      }
     }
+    this.handleLocationClick = this.handleLocationClick.bind(this);
+  }
+
+  handleLocationClick = (e) => {
+    e.preventDefault();
+    var selectedLocation = this.state.aboutValues[e.target.innerText];
+    this.setState({
+      center: {
+        lat: selectedLocation[0],
+        lng: selectedLocation[1]
+      },
+      zoom: 15
+    })
   }
   
   componentDidMount() {
@@ -50,12 +68,21 @@ class BigDay extends React.Component {
     if(!this.state.sheetLoaded){
       return <div class="about-bethlehem"></div>
     } else {
+      let dataObject = {
+        aboutValues: this.state.aboutValues,
+        onlyMains: true
+      }
       return (
         <div id="about-bethlehem">
           <MapDisplay onlyMains={true} 
                       aboutValues={this.state.aboutValues}
-                      positionClass={"pull-left"} />
-          <LocationContainer positionClass={"pull-right"} />
+                      positionClass={"pull-left"}
+                      zoom={this.state.zoom}
+                      center={this.state.center} />
+          <LocationContainer positionClass={"pull-right"}
+                             aboutValues={this.state.aboutValues}
+                             onlyMains={true}
+                             handleLocationClick={this.handleLocationClick} />
         </div>
       )
     }
