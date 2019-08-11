@@ -22,7 +22,9 @@ class AboutBethlehem extends React.Component {
 
   handleLocationClick = (e) => {
     e.preventDefault();
-    var selectedLocation = this.state.aboutValues[e.target.innerText];
+    // we set the item-key attribute to be the value we need
+    let stateKey = e.target.attributes["item-key"].value;
+    var selectedLocation = this.state.aboutValues[stateKey];
     this.setState({
       center: {
         lat: selectedLocation[0],
@@ -59,7 +61,7 @@ class AboutBethlehem extends React.Component {
       // lat is the first column, lng is the second column, the name of
       // the marker is the third column, description is the fourth,
       // and the fifth column is whether or not it's a main marker
-      values[value[2]] = [parseFloat(value[0]), parseFloat(value[1]), value[3], value[4] === "TRUE"]
+      values[value[2]] = [parseFloat(value[0]), parseFloat(value[1]), value[3], value[4] === "TRUE", value[5], value[7]]
     })
     return values
   }

@@ -1,6 +1,36 @@
 #location-container {
     position: absolute;
-    height: 80vh;
+    height: 70vh;
     overflow-y: scroll;
     width: 40%;
+}
+
+.link-item-location {
+    font-family: 'Amatic SC', serif;
+    font-size: 1em;
+    list-style-type: none;
+    text-decoration: none;
+    color: #073E66;
+    padding-top: 1em;
+    font-weight: 400 !important;
+    padding-top: 0px;
+}
+
+.link-item-location a {
+    color: #073E66;
+}
+
+.link-item-location a:visited{
+    color: #073E66;
+    text-decoration: none;
+}  
+
+.link-item-header:not(a) {
+    font-family: 'Amatic SC', serif;
+    font-size: 2.7em;
+    list-style-type: none;
+    color: #073E66;
+    padding-top: 1em;
+    font-weight: 700;
+    padding-top: 0px;
 }

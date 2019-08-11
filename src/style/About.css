@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 .about-title-container{
   padding: 0.75em;
-  background: #DCB982;
+  background: #4595BA;
   font-family: 'Amatic SC', serif;
+  color: #EEEE;
   border-radius: 10px 10px 0 0;
   text-align: center;
 }
@@ -16,12 +17,13 @@
 }
 
 .inner-about-container{
-  border: 1px solid black;
+  border: 1px solid #306781;
   border-radius: 10px 10px 0 0;
+  box-shadow: 5px 5px 50px #073E66;
 }
 
 .about-description-container {
-  background-color: rgb(152,182,161);
+  background-color: #b0d2e2;
   text-align: center;
   min-height: 5em;
   font-family: 'Open Sans Condensed';
@@ -30,7 +32,16 @@
 .about-description {
   margin: 0;
   padding: 1em;
+  font-family: 'DM Sans', sans-serif;
+  color: #073E66;
 }
+
+.about-image {
+  border-radius: 25px;
+  width: 100%;
+  box-shadow: 5px 5px 50px #073E66;
+}
+
 
 @media only screen
   and (min-device-width: 320px)

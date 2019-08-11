@@ -1,16 +1,11 @@
-.about-image {
-    border-radius: 25px;
-    width: 100%;
-    box-shadow: 5px 5px 50px;
-}
 
 #about-couple-container {
   margin-top: 2em;
 }
-
+/* 
 .inner-about-container{
     box-shadow: 5px 5px 30px;
-}
+} */
 
 #bottom-row {
   margin-bottom: 5em;

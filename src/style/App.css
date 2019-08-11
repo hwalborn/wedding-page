@@ -1,21 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Amatic+SC|Open+Sans+Condensed|Inconsolata');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script|Amatic+SC|Open+Sans+Condensed|Inconsolata|DM+San');
 
 body {
-  background-color: #EEEE;
+  background-color: #ecece1;
 }
 
 .col-md-3 {
   padding: 0;
 }
 
-#content {
-  margin-top: 7em;
+#carousel-container{
+  width: 50vw;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+#landing-page{
+  width: 100vw;
+  margin-right: -15px;
+  margin-left: 0px
 }
 
 /*/////Header stuff/////*/
 .header {
-  position:fixed;
-  top:0;
   z-index: 100;
   margin: 0;
   background-color: rgba(255,79,0, 0.75);
@@ -30,7 +36,7 @@ body {
 
 .header a{
   font-family: 'Amatic SC', serif;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: 8.6px;
   color: black;
   text-decoration: none;
@@ -45,7 +51,7 @@ body {
 #scroll-strip {
   height: 0.5em;
   background-color: #ff4f00;
-  width: 100%;
+  width: 100vw;
   margin: 0px;
 }
 
@@ -57,6 +63,7 @@ body {
   text-decoration: none;
   color: #073E66;
   padding-top: 1em;
+  font-weight: 400 !important;
 }
 .link-item a {
   color: #073E66;
@@ -81,15 +88,13 @@ body {
   and (-webkit-min-device-pixel-ratio: 2) {
   .header a{
     font-size: 9em !important;
+    font-weight: 300;
   }
 
   .header {
     height: 13em;
   }
 
-  #content {
-    margin-top: 13em;
-  }
   .inner-about-container {
     font-size: 9em;
   }
@@ -100,6 +105,14 @@ body {
 
   .link-item {
     font-size: 6em;
+  }
+
+  #landing-page{
+    text-align: center;
+  }
+
+  #carousel-container{
+    width: 100vw;
   }
 }
 

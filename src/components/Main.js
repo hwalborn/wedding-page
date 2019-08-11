@@ -55,7 +55,7 @@ class Main extends React.Component {
 
     return (
       <div>
-      <Row>
+      <Row id="landing-page">
         <Col md={this.state.linkContainerWidth} sm={12}>
           <ul>
             <li className="link-item fade-in">
@@ -80,8 +80,8 @@ class Main extends React.Component {
             </li>
           </ul>
         </Col>
-        <Col md={8} sm={12}>
-          <Carousel infiniteLoop={true} autoPlay={true} >
+        <Col id="carousel-container">
+          <Carousel infiniteLoop={true} autoPlay={true} dynamicHeight={true} >
               {carouselImages}
           </Carousel>
         </Col>
