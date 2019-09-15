@@ -20,7 +20,7 @@ const Registry = () => {
               <div className="image-container">
                 <img id="bed-bath-beyond" src={bedBathBeyond}/>
               </div>
-              <Button target="_blank" href="https://www.bedbathandbeyond.com/store/giftRegistry/viewRegistryOwner/myItems/548048029" variant="outline-info">Browse Bed Bath & Beyond</Button>
+              <Button target="_blank" href="https://www.bedbathandbeyond.com/store/giftregistry/viewregistryguest/548048029" variant="outline-info">Browse Bed Bath & Beyond</Button>
             </div>
           </Col>
           <Col md={calculatedWidth()} className="registry-container">
