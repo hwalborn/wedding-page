@@ -1,0 +1,13 @@
+#bed-bath-beyond{
+    width: 45vw;
+    background-image: "../images/BedBathBeyond.png";
+    height: 100%;
+}
+
+#west-elm{
+    width: 100%;
+}
+
+.registry-container{
+    height: 45vh;
+}

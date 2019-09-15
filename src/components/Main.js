@@ -45,7 +45,7 @@ class Main extends React.Component {
     : null
 
   // grab list of images from directory
-  let images = importAll(require.context('../images', false, /\.(png|jpe?g|svg)$/));
+  let images = importAll(require.context('../images/Carousel', false, /\.(png|jpe?g|svg)$/));
   // add all the images to the carousel
   let carouselImages = images.map((image, index) => {
     // clean the file name...
