@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npm test",
-    "start": "react-scripts start",
-    "_start": "HOST=`hostname` react-scripts start",
+
+    "start": "HOST=`hostname` react-scripts start",
     "build": "react-scripts build"
   },
   "author": "holt w.",

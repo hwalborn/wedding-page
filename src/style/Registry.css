@@ -43,7 +43,7 @@
   and (-webkit-min-device-pixel-ratio: 2) {
 
   .registry-container{
-      height: 25vh;  
+      height: 30vh;  
   }
 
   .inner-registry-container a{
