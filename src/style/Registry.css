@@ -1,13 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
 #bed-bath-beyond{
-    width: 45vw;
-    background-image: "../images/BedBathBeyond.png";
-    height: 100%;
+    width: 90%;
+    padding: 5%;
 }
 
 #west-elm{
-    width: 100%;
+    width: 90%;
+    padding: 5%;
 }
 
 .registry-container{
     height: 45vh;
+    padding: 1em;
+}
+
+.registry-row{
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 10vh;
+}
+
+.image-container{
+    min-height: 15em;
+}
+
+.inner-registry-container{
+    border: 1px solid #306781;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 5px 5px 50px #073E66;
+    background-color: #b0d2e2;
+    text-align: center;
+}
+
+.inner-registry-container a{
+    margin-bottom: 15px;
+}
+
+@media only screen
+  and (min-device-width: 320px)
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  .registry-container{
+      height: 25vh;  
+  }
+
+  .inner-registry-container a{
+      font-size: 3em;
+  }
 }

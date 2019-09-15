@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Route, withRouter } from 'react-router'
 import AOS from 'aos';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header'
 import Main from './components/Main'
 import AboutBethlehem from './components/AboutBethlehem'
