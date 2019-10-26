@@ -20,8 +20,8 @@ const MapMarker = ({text, handleClick, isMain}) => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   borderRadius: '100%',
-                  height: '1em',
-                  width: '1em'
+                  height: window.innerWidth < 1000 ? '2.5em' : '1em',
+                  width: window.innerWidth < 1000 ? '2.5em' : '1em'
                 }
     return (
       <div style={style}
