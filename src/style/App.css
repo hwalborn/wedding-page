@@ -82,6 +82,11 @@ body {
 	animation-duration: 1s;
 }
 
+.drop-link #header-date {
+  font-weight: 100;
+  font-size: 0.75em;
+}
+
 @media only screen
   and (min-device-width: 320px)
   and (max-device-width: 480px)
@@ -89,6 +94,11 @@ body {
   .header a{
     font-size: 9em !important;
     font-weight: 300;
+  }
+
+  .drop-link #header-date {
+    font-weight: 100;
+    font-size: 0.5em;
   }
 
   .header {

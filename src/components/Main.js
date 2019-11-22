@@ -65,7 +65,7 @@ class Main extends React.Component {
             </li>
             <li className="link-item fade-in">
               <Link to="/bigDay" className="drop-link">
-                  The Big Day
+                  The Big Day<div id="header-date">1/3/2020</div>
               </Link>
             </li>
             <li className="link-item fade-in">
