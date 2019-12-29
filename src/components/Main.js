@@ -69,6 +69,11 @@ class Main extends React.Component {
               </Link>
             </li>
             <li className="link-item fade-in">
+              <Link to="/transportation" className="drop-link">
+                  Transportation
+              </Link>
+            </li>
+            <li className="link-item fade-in">
               <Link to="/bethlehem" className="drop-link">
                   About Bethlehem
               </Link>

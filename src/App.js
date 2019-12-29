@@ -8,6 +8,7 @@ import AboutBethlehem from './components/AboutBethlehem'
 import AboutTheCouple from './components/AboutTheCouple'
 import Registry from './components/Registry'
 import BigDay from './components/BigDay'
+import Transportation from './components/Transportation'
 
 class App extends Component {
     componentDidMount(){
@@ -25,6 +26,7 @@ class App extends Component {
           <Route exact path="/aboutTheCouple" component={ AboutTheCouple } />
           <Route exact path="/registry" component={ Registry } />
           <Route exact path="/bigDay" component={ BigDay } />
+          <Route exact path="/transportation" component={ Transportation } />
         </div>
       </div>
     );
